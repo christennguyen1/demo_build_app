@@ -1,12 +1,13 @@
 name: CI/CD Pipeline
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
 jobs:
   build:
+    if: github.event.pull_request.merged == true  # Chỉ chạy khi pull request được merge
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
