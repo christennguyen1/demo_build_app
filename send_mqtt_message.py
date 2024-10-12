@@ -2,7 +2,7 @@ import requests
 import os
 
 AIO_USERNAME = "Vinhnguyen20"
-AIO_K = ""
+AIO_KEY = ""
 AIO_FEED_ID = "update-CI_CD"
 
 def send_update_message():
