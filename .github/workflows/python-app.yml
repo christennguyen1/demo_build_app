@@ -15,7 +15,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'
+          python-version: '3.10'
 
       - name: Install dependencies
         run: |
@@ -25,7 +25,8 @@ jobs:
 
       - name: Send MQTT message to Adafruit IO
         env:
-          AIO_KEY: ${{ secrets.AIO_KEY }}  # Thêm AIO_KEY vào GitHub Secrets
+          AIO_USERNAME: "Vinhnguyen20"  # Tên người dùng Adafruit IO
+          AIO_KEY: ${{ secrets.AIO_KEY }}  # API Key từ GitHub Secrets
         run: |
           source myenv/bin/activate
-          python send_mqtt_message.py  # Gửi thông điệp đến Adafruit IO
+          python send_mqtt_message.py  # Chạy script gửi thông điệp
