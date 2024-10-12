@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m venv myenv
+          python3 -m venv myenv
           source myenv/bin/activate
           pip install -r requirements.txt
 
@@ -29,4 +29,4 @@ jobs:
           AIO_KEY: ${{ secrets.AIO_KEY }}  # API Key từ GitHub Secrets
         run: |
           source myenv/bin/activate
-          python send_mqtt_message.py  # Chạy script gửi thông điệp
+          python3 send_mqtt_message.py  # Chạy script gửi thông điệp
