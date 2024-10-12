@@ -1,0 +1,31 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m venv myenv
+          source myenv/bin/activate
+          pip install -r requirements.txt
+
+      - name: Send MQTT message to Adafruit IO
+        env:
+          AIO_KEY: ${{ secrets.AIO_KEY }}  # Thêm AIO_KEY vào GitHub Secrets
+        run: |
+          source myenv/bin/activate
+          python send_mqtt_message.py  # Gửi thông điệp đến Adafruit IO
