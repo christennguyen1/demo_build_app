@@ -2,13 +2,13 @@ import requests
 import os
 
 AIO_USERNAME = "Vinhnguyen20"
-AIO_KEY = os.environ.get('AIO_KEY')
+AIO_K = os.environ.get('AIO_KEY')
 AIO_FEED_ID = "update-CI_CD"
 
 def send_update_message():
     url = f"https://io.adafruit.com/api/v2/{AIO_USERNAME}/feeds/{AIO_FEED_ID}/data"
     headers = {
-        "X-AIO-Key": AIO_KEY,
+        "X-AIO-Key": AIO_K,
         "Content-Type": "application/json"
     }
     data = {"value": "update"}
