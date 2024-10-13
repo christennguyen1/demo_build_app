@@ -11,7 +11,7 @@ def send_update_message():
         "X-AIO-Key": AIO_K,
         "Content-Type": "application/json"
     }
-    version = "3.1.2"
+    version = "3.1.3"
     data = {"value": f"update version {version}"}  # Dữ liệu gửi lên
     response = requests.post(url, json=data, headers=headers)
     if response.status_code == 200:
