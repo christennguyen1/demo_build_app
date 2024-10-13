@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 
 def show_message():
-    messagebox.showinfo("Message", "Hello, World Vinh Lâm 123!")
+    messagebox.showinfo("Message", "Hello, World Vinh Lâm 123456!")
 
 # Tạo cửa sổ chính
 root = tk.Tk()

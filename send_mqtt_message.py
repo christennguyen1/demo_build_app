@@ -1,5 +1,6 @@
 import requests
 import os
+from constant import *
 
 AIO_USERNAME = os.getenv("AIO_USERNAME")  # Tên người dùng Adafruit IO từ env
 AIO_K = os.getenv("AIO_KEY")  # API Key lấy từ GitHub Secrets qua env
@@ -11,7 +12,7 @@ def send_update_message():
         "X-AIO-Key": AIO_K,
         "Content-Type": "application/json"
     }
-    version = "3.1.5"
+    version = "3.1.6"
     data = {"value": f"update version {version}"}  # Dữ liệu gửi lên
     response = requests.post(url, json=data, headers=headers)
     if response.status_code == 200:
